@@ -193,7 +193,7 @@
         "UserPoolId": {
           "Ref": "UserPool"
         },
-        "ClientName": "handsoa161d99c_app_clientWeb",
+        "ClientName": "handsoc245a775_app_clientWeb",
         "RefreshTokenValidity": {
           "Ref": "userpoolClientRefreshTokenValidity"
         }
@@ -208,7 +208,7 @@
         "UserPoolId": {
           "Ref": "UserPool"
         },
-        "ClientName": "handsoa161d99c_app_client",
+        "ClientName": "handsoc245a775_app_client",
         "GenerateSecret": {
           "Ref": "userpoolClientGenerateSecret"
         },
@@ -245,7 +245,7 @@
               "Fn::Join": [
                 "",
                 [
-                  "upClientLambdaRolea161d99c",
+                  "upClientLambdaRolec245a775",
                   {
                     "Fn::Select": [
                       3,
@@ -313,7 +313,7 @@
             }
           ]
         },
-        "PolicyName": "handsoa161d99c_userpoolclient_lambda_iam_policy",
+        "PolicyName": "handsoc245a775_userpoolclient_lambda_iam_policy",
         "Roles": [
           {
             "Ref": "UserPoolClientRole"
@@ -356,7 +356,7 @@
             }
           ]
         },
-        "PolicyName": "handsoa161d99c_userpoolclient_lambda_log_policy",
+        "PolicyName": "handsoc245a775_userpoolclient_lambda_log_policy",
         "Roles": [
           {
             "Ref": "UserPoolClientRole"
@@ -436,12 +436,12 @@
         "IdentityPoolName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "handsontodoa161d99c_identitypool_a161d99c",
+            "handsontodoc245a775_identitypool_c245a775",
             {
               "Fn::Join": [
                 "",
                 [
-                  "handsontodoa161d99c_identitypool_a161d99c__",
+                  "handsontodoc245a775_identitypool_c245a775__",
                   {
                     "Ref": "env"
                   }

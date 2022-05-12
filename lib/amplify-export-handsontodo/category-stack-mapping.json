@@ -6,12 +6,7 @@
   },
   {
     "category": "auth",
-    "resourceName": "handsontodoa161d99c",
+    "resourceName": "handsontodoc245a775",
     "service": "Cognito"
-  },
-  {
-    "category": "hosting",
-    "resourceName": "amplifyhosting",
-    "service": "amplifyhosting"
   }
 ]

@@ -158,7 +158,7 @@
         "Parameters": {}
       }
     },
-    "authhandsontodoa161d99c": {
+    "authhandsontodoc245a775": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
         "Parameters": {
@@ -177,17 +177,11 @@
         }
       }
     },
-    "hostingamplifyhosting": {
-      "Type": "AWS::CloudFormation::Stack",
-      "Properties": {
-        "Parameters": {}
-      }
-    },
     "UpdateRolesWithIDPFunction": {
       "DependsOn": [
         "AuthRole",
         "UnauthRole",
-        "authhandsontodoa161d99c"
+        "authhandsontodoc245a775"
       ],
       "Type": "AWS::Lambda::Function",
       "Properties": {
@@ -282,7 +276,7 @@
         },
         "idpId": {
           "Fn::GetAtt": [
-            "authhandsontodoa161d99c",
+            "authhandsontodoc245a775",
             "Outputs.IdentityPoolId"
           ]
         },
