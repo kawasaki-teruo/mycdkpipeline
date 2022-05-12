@@ -1,0 +1,98 @@
+{
+  "stackName": "amplify-handsontodo-dev-64852",
+  "props": {
+    "templateFile": "root-stack-template.json",
+    "parameters": {
+      "AuthRoleName": "amplify-handsontodo-dev-64852-authRole",
+      "UnauthRoleName": "amplify-handsontodo-dev-64852-unauthRole",
+      "DeploymentBucketName": "amplify-handsontodo-dev-64852-deployment"
+    },
+    "preserveLogicalIds": true,
+    "loadNestedStacks": {
+      "apihandsontodo": {
+        "templateFile": "api/handsontodo/cloudformation-template.json",
+        "parameters": {
+          "AppSyncApiName": "handsontodo",
+          "DynamoDBBillingMode": "PAY_PER_REQUEST",
+          "DynamoDBEnableServerSideEncryption": false,
+          "S3DeploymentBucket": "amplify-handsontodo-dev-64852-deployment",
+          "S3DeploymentRootKey": "amplify-appsync-files/d7d652a714430c505333f6353fccc07bf16e78e3",
+          "env": "dev"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {
+          "CustomResourcesjson": {
+            "templateFile": "api/handsontodo/amplify-appsync-files/stacks/CustomResources.json",
+            "preserveLogicalIds": true,
+            "loadNestedStacks": {}
+          },
+          "Todo": {
+            "templateFile": "api/handsontodo/amplify-appsync-files/stacks/Todo.json",
+            "preserveLogicalIds": true,
+            "loadNestedStacks": {}
+          }
+        }
+      },
+      "authhandsontodoa161d99c": {
+        "templateFile": "auth/handsontodoa161d99c/handsontodoa161d99c-cloudformation-template.json",
+        "parameters": {
+          "identityPoolName": "handsontodoa161d99c_identitypool_a161d99c",
+          "allowUnauthenticatedIdentities": false,
+          "resourceNameTruncated": "handsoa161d99c",
+          "userPoolName": "handsontodoa161d99c_userpool_a161d99c",
+          "autoVerifiedAttributes": [
+            "email"
+          ],
+          "mfaConfiguration": "OFF",
+          "mfaTypes": [
+            "SMS Text Message"
+          ],
+          "smsAuthenticationMessage": "Your authentication code is {####}",
+          "smsVerificationMessage": "Your verification code is {####}",
+          "emailVerificationSubject": "Your verification code",
+          "emailVerificationMessage": "Your verification code is {####}",
+          "defaultPasswordPolicy": false,
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": [],
+          "requiredAttributes": [
+            "email"
+          ],
+          "aliasAttributes": [],
+          "userpoolClientGenerateSecret": false,
+          "userpoolClientRefreshTokenValidity": 30,
+          "userpoolClientWriteAttributes": [
+            "email"
+          ],
+          "userpoolClientReadAttributes": [
+            "email"
+          ],
+          "userpoolClientLambdaRole": "handsoa161d99c_userpoolclient_lambda_role",
+          "userpoolClientSetAttributes": false,
+          "sharedId": "a161d99c",
+          "resourceName": "handsontodoa161d99c",
+          "authSelections": "identityPoolAndUserPool",
+          "useDefault": "default",
+          "userPoolGroupList": [],
+          "serviceName": "Cognito",
+          "usernameCaseSensitive": false,
+          "useEnabledMfas": true,
+          "breakCircularDependency": true,
+          "dependsOn": [],
+          "env": "dev"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      },
+      "hostingamplifyhosting": {
+        "templateFile": "hosting/amplifyhosting/amplifyhosting-template.json",
+        "parameters": {
+          "appId": "d2raqltxlmaeow",
+          "type": "manual",
+          "env": "dev"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      }
+    }
+  }
+}

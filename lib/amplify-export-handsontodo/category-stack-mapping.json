@@ -1,0 +1,17 @@
+[
+  {
+    "category": "api",
+    "resourceName": "handsontodo",
+    "service": "AppSync"
+  },
+  {
+    "category": "auth",
+    "resourceName": "handsontodoa161d99c",
+    "service": "Cognito"
+  },
+  {
+    "category": "hosting",
+    "resourceName": "amplifyhosting",
+    "service": "amplifyhosting"
+  }
+]
